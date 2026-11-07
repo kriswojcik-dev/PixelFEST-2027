@@ -1,66 +1,348 @@
+
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Inclusive Form Flow</title><link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header class="page-header">
-            <p class="eyebrow">Application, Registration, or Request</p>
-            <h1>Replace with a specific task title</h1>
-            <p class="lede">Explain who this form is for, what it accomplishes, how long it takes, and what happens after submission.</p>
-        </header>
-        <main>
-            <section id="expectations">
-                <h2>F1 · Purpose and Expectations</h2>
-                <p>State the required/optional convention and a concise privacy notice. Use fictional test data only.</p>
-            </section>
-            <form action="" method="get">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PixelFest 2027 | Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="page-header">
+        <p class="eyebrow">Gaming Community Event</p>
+        <h1>PixelFest 2027</h1>
+        <p class="lede">
+            Register for an evening of gaming, friendly competition,
+            and community fun.
+        </p>
+    </header>
+
+    <main>
+        <!-- F1: Purpose and Expectations -->
+        <section id="expectations">
+            <h2>F1 · Purpose and Expectations</h2>
+
+            <p>
+                PixelFest 2027 is a fictional, free gaming event for
+                adults ages 18 and older. Participants can explore
+                casual games, retro favorites, and tournaments.
+            </p>
+
+            <p>
+                This registration form takes approximately 3–5 minutes.
+                Fields marked with an asterisk (*) are required.
+                All other fields are optional.
+            </p>
+
+            <p>
+                In a real event, registration information would be
+                reviewed and a confirmation sent by email.
+                This academic prototype does not submit, store,
+                or transmit registration data. Use fictional
+                information only.
+            </p>
+        </section>
+
+        <!-- F3 and F4: Semantic Form and Validation -->
+        <form action="#" method="post">
+
+            <fieldset>
+                <legend>F3 · Attendee Information</legend>
+
+                <div class="field">
+                    <label for="full-name">Full name *</label>
+                    <input
+                        type="text"
+                        id="full-name"
+                        name="full_name"
+                        autocomplete="name"
+                        maxlength="80"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email address *</label>
+                    <p class="help" id="email-help">
+                        Example: player@example.com
+                    </p>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        aria-describedby="email-help"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label for="gamer-tag">Gamer tag (optional)</label>
+                    <input
+                        type="text"
+                        id="gamer-tag"
+                        name="gamer_tag"
+                        autocomplete="off"
+                        maxlength="30">
+                </div>
+
+                <label class="choice">
+                    <input
+                        type="checkbox"
+                        name="age_confirmed"
+                        value="yes"
+                        required>
+                    I confirm that I am at least 18 years old. *
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>F3 · Event Preferences</legend>
+
+                <div class="field">
+                    <label for="session">Preferred event session *</label>
+                    <select id="session" name="session" required>
+                        <option value="">Choose a session</option>
+                        <option value="afternoon">
+                            Afternoon
+                        </option>
+                        <option value="evening">
+                            Evening
+                        </option>
+                    </select>
+                </div>
+
                 <fieldset>
-                    <legend>F3 · Contact information</legend>
-                    <p class="help">Replace or extend this group based on your justified field inventory.</p>
-                    <div class="field">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" autocomplete="name">
-                    </div>
-                    <div class="field">
-                        <label for="email">Email address (required)</label>
-                        <input id="email" name="email" type="email" autocomplete="email" required>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>F3 · Request choices</legend>
-                    <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p>
+                    <legend>Primary gaming interest *</legend>
+
                     <label class="choice">
-                        <input type="radio" name="request_type" value="option-a"> Replace with option A</label>
-                        <label class="choice"><input type="radio" name="request_type" value="option-b"> Replace with option B</label>
-                    </fieldset>
-                    <div class="field">
-                        <label for="details">Request details</label>
-                        <p class="help" id="details-help">Explain the expected content and any limit before entry.</p>
-                        <textarea id="details" name="details" aria-describedby="details-help"></textarea>
-                    </div>
-                    <button type="submit">Replace with a specific action</button>
-                </form>
-                <section id="states">
-                    <h2>F5 · State and Recovery Specimen</h2>
-                    <p>Document default, focus, required, valid, invalid, disabled, and a static server-returned error. Keep this section separate from the primary blank form when necessary to avoid misleading users.</p>
-                    <div class="error-summary">
-                        <h3>There is a problem with the fictional submission</h3>
-                        <p><a href="#error-example">Email address needs attention</a></p>
-                    </div>
-                    <div class="field field-error">
-                        <label for="error-example">Email address</label>
-                        <input id="error-example" type="email" value="alex.example" aria-invalid="true" aria-describedby="error-message">
-                        <p id="error-message"><strong>Error:</strong> Enter an address in the format name@example.com.</p>
-                    </div>
-                    <button type="button" disabled>Disabled example</button>
-                </section>
-                <section id="documentation">
-                    <h2>F2 and F6 · Planning and Evidence</h2>
-                    <p>Link your field inventory, state matrix, fictional test-data list, completed test record, and AI disclosure.</p>
-                </section>
-            </main>
-        </body>
-        </html>
+                        <input
+                            type="radio"
+                            name="gaming_interest"
+                            value="casual"
+                            required>
+                        Casual gaming
+                    </label>
+
+                    <label class="choice">
+                        <input
+                            type="radio"
+                            name="gaming_interest"
+                            value="competitive">
+                        Competitive gaming
+                    </label>
+
+                    <label class="choice">
+                        <input
+                            type="radio"
+                            name="gaming_interest"
+                            value="retro">
+                        Retro gaming
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Interested in a tournament? *</legend>
+
+                    <label class="choice">
+                        <input
+                            type="radio"
+                            name="tournament"
+                            value="yes"
+                            required>
+                        Yes
+                    </label>
+
+                    <label class="choice">
+                        <input
+                            type="radio"
+                            name="tournament"
+                            value="no">
+                        No
+                    </label>
+                </fieldset>
+
+                <div class="field">
+                    <label for="tournament-game">
+                        Preferred tournament game (optional)
+                    </label>
+                    <p class="help" id="game-help">
+                        Select a game if you are interested
+                        in tournament participation.
+                    </p>
+                    <select
+                        id="tournament-game"
+                        name="tournament_game"
+                        aria-describedby="game-help">
+                        <option value="">No selection</option>
+                        <option value="smash">
+                            Super Smash Bros.
+                        </option>
+                        <option value="mario_kart">
+                            Mario Kart
+                        </option>
+                        <option value="other">
+                            Other
+                        </option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Accessibility and Questions</legend>
+
+                <div class="field">
+                    <label for="accessibility">
+                        Accessibility accommodations (optional)
+                    </label>
+                    <p class="help" id="accessibility-help">
+                        Describe any accommodation you would need
+                        to participate. Do not include medical diagnoses.
+                        Maximum 500 characters.
+                    </p>
+                    <textarea
+                        id="accessibility"
+                        name="accessibility_needs"
+                        maxlength="500"
+                        aria-describedby="accessibility-help"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="questions">
+                        Additional questions (optional)
+                    </label>
+                    <p class="help" id="questions-help">
+                        Ask an event-related question.
+                        Maximum 300 characters.
+                    </p>
+                    <textarea
+                        id="questions"
+                        name="questions"
+                        maxlength="300"
+                        aria-describedby="questions-help"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Event Agreement</legend>
+
+                <p id="event-rules">
+                    Event rules: Respect other attendees, use
+                    appropriate language, follow tournament
+                    instructions, and treat gaming equipment
+                    responsibly.
+                </p>
+
+                <label class="choice">
+                    <input
+                        type="checkbox"
+                        name="rules_accepted"
+                        value="yes"
+                        aria-describedby="event-rules"
+                        required>
+                    I have read and agree to follow the event
+                    participation rules. *
+                </label>
+            </fieldset>
+
+            <button type="submit">
+                Register for PixelFest
+            </button>
+
+            <p class="help">
+                Prototype only. This button does not create
+                a real registration.
+            </p>
+        </form>
+
+        <!-- F4: Requirements and Validation -->
+        <section id="validation">
+            <h2>F4 · Requirements and Validation</h2>
+            <p>
+                Required fields use native HTML validation.
+                Email addresses must use an email format.
+                Text fields and text areas have appropriate
+                character limits.
+            </p>
+        </section>
+
+        <!-- F5: State and Recovery Examples -->
+        <section id="states">
+            <h2>F5 · State and Recovery Specimen</h2>
+
+            <p>
+                This section demonstrates example form states.
+                It is separate from the registration form.
+            </p>
+
+            <div class="field">
+                <label for="default-example">
+                    Default state
+                </label>
+                <input
+                    id="default-example"
+                    type="text"
+                    placeholder="Example text field">
+            </div>
+
+            <div class="field">
+                <label for="valid-example">
+                    Valid state
+                </label>
+                <input
+                    id="valid-example"
+                    type="email"
+                    value="player@example.com"
+                    readonly>
+            </div>
+
+            <div class="error-summary">
+                <h3>Example: Registration needs attention</h3>
+                <p>
+                    <a href="#error-example">
+                        Email address needs attention
+                    </a>
+                </p>
+            </div>
+
+            <div class="field field-error">
+                <label for="error-example">
+                    Email address
+                </label>
+                <input
+                    id="error-example"
+                    type="email"
+                    value="player.example"
+                    aria-invalid="true"
+                    aria-describedby="error-message">
+
+                <p id="error-message">
+                    <strong>Error:</strong>
+                    Enter an email address in the format
+                    player@example.com.
+                </p>
+            </div>
+
+            <button type="button" disabled>
+                Disabled example
+            </button>
+        </section>
+
+        <!-- F6: Documentation -->
+        <section id="documentation">
+            <h2>F2 and F6 · Planning and Evidence</h2>
+
+            <p>
+                The field inventory documents the purpose,
+                requirements, constraints, and sensitivity
+                of all registration controls.
+            </p>
+
+            <p>
+                Testing evidence, fictional test data,
+                the completed state matrix, and AI disclosure
+                will be documented after implementation.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
