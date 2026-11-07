@@ -1,61 +1,356 @@
+
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Field Inventory</title>
-        <style>
-        body{
-            font-family:Arial,sans-serif;
-            line-height:1.5;
-            max-width:80rem;
-            margin:auto;
-            padding:1rem;
-            color:#191919;
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PixelFest 2027 | Field Inventory</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 80rem;
+            margin: auto;
+            padding: 1rem;
+            color: #191919;
         }
-        table{
-            width:100%;
-            border-collapse:collapse;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
-        th,td{
-            padding:.6rem;
-            border:1px solid #999;
-            text-align:left;
-            vertical-align:top;
+
+        th, td {
+            padding: .6rem;
+            border: 1px solid #999;
+            text-align: left;
+            vertical-align: top;
         }
-        th{
-            background:#f1f1f1;
+
+        th {
+            background: #f1f1f1;
         }
-        </style>
-        </head>
-        <body>
-            <h1>F2 · Task and Data Plan</h1>
-            <p>Duplicate rows as needed. Justify every collected value.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Visible label / question</th>
-                        <th>Why necessary now?</th>
-                        <th>Required?</th>
-                        <th>Native control/type</th>
-                        <th>Submitted name/value</th>
-                        <th>Autocomplete/inputmode</th>
-                        <th>Constraint/instruction</th>
-                        <th>Sensitivity and minimization decision</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Example only</td>
-                        <td>Replace</td>
-                        <td>Yes/No</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace or N/A</td>
-                        <td>Replace or none</td>
-                        <td>Replace</td>
-                    </tr>
-                </tbody>
-            </table>
-        </body>
-        </html>
+    </style>
+</head>
+
+<body>
+
+    <h1>F2 · Task and Data Plan</h1>
+
+    <h2>PixelFest 2027: Gaming Community Night</h2>
+
+    <p>
+        This form allows attendees to register for a fictional,
+        free, one-day gaming event. Attendees can choose a session,
+        indicate their gaming interests, and optionally express
+        interest in tournament participation.
+    </p>
+
+    <p>
+        All information entered into the prototype will be
+        fictional. No personal information will be collected,
+        transmitted, or stored.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Visible label / question</th>
+                <th>Why necessary now?</th>
+                <th>Required?</th>
+                <th>Native control/type</th>
+                <th>Submitted name/value</th>
+                <th>Autocomplete/inputmode</th>
+                <th>Constraint/instruction</th>
+                <th>Sensitivity and minimization decision</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <!-- Field 1: Full Name -->
+            <tr>
+                <td>Full name</td>
+                <td>
+                    Identifies the attendee's registration.
+                </td>
+                <td>Yes</td>
+                <td>input type="text"</td>
+                <td>full_name</td>
+                <td>autocomplete="name"</td>
+                <td>
+                    Required; maximum 80 characters.
+                </td>
+                <td>
+                    Personal identifier. No home address
+                    or additional identifying information
+                    is requested.
+                </td>
+            </tr>
+
+            <!-- Field 2: Email -->
+            <tr>
+                <td>Email address</td>
+                <td>
+                    Provides a way to send registration
+                    confirmation and event information.
+                </td>
+                <td>Yes</td>
+                <td>input type="email"</td>
+                <td>email</td>
+                <td>autocomplete="email"</td>
+                <td>
+                    Required; must use a valid email format,
+                    such as player@example.com.
+                </td>
+                <td>
+                    Contact information. No phone number
+                    is requested because email is sufficient.
+                </td>
+            </tr>
+
+            <!-- Field 3: Gamer Tag -->
+            <tr>
+                <td>Gamer tag</td>
+                <td>
+                    Allows participants to identify
+                    themselves during gaming activities.
+                </td>
+                <td>No</td>
+                <td>input type="text"</td>
+                <td>gamer_tag</td>
+                <td>autocomplete="off"</td>
+                <td>
+                    Optional; maximum 30 characters.
+                </td>
+                <td>
+                    May identify an online gaming profile.
+                    Optional to protect participant privacy.
+                </td>
+            </tr>
+
+            <!-- Field 4: Age Confirmation -->
+            <tr>
+                <td>
+                    I confirm that I am at least 18 years old.
+                </td>
+                <td>
+                    Confirms eligibility for the event's
+                    minimum age requirement.
+                </td>
+                <td>Yes</td>
+                <td>input type="checkbox"</td>
+                <td>age_confirmed=yes</td>
+                <td>N/A</td>
+                <td>
+                    Required; checkbox must be selected.
+                </td>
+                <td>
+                    Avoids collecting sensitive birth dates
+                    or exact ages.
+                </td>
+            </tr>
+
+            <!-- Field 5: Event Session -->
+            <tr>
+                <td>Preferred event session</td>
+                <td>
+                    Identifies which event session
+                    the attendee wants to attend.
+                </td>
+                <td>Yes</td>
+                <td>select</td>
+                <td>
+                    session=afternoon<br>
+                    session=evening
+                </td>
+                <td>N/A</td>
+                <td>
+                    Required; choose one available
+                    event session.
+                </td>
+                <td>
+                    Low sensitivity. Only scheduling
+                    preference is collected.
+                </td>
+            </tr>
+
+            <!-- Field 6: Gaming Interest -->
+            <tr>
+                <td>Primary gaming interest</td>
+                <td>
+                    Helps organizers understand the
+                    types of gaming activities attendees
+                    prefer.
+                </td>
+                <td>Yes</td>
+                <td>input type="radio" (group)</td>
+                <td>
+                    gaming_interest=casual<br>
+                    gaming_interest=competitive<br>
+                    gaming_interest=retro
+                </td>
+                <td>N/A</td>
+                <td>
+                    Required; select one gaming category.
+                </td>
+                <td>
+                    Low sensitivity. Collects only a general
+                    gaming preference.
+                </td>
+            </tr>
+
+            <!-- Field 7: Tournament Participation -->
+            <tr>
+                <td>
+                    Are you interested in participating
+                    in a tournament?
+                </td>
+                <td>
+                    Determines whether the attendee
+                    wishes to join tournament activities.
+                </td>
+                <td>Yes</td>
+                <td>input type="radio" (group)</td>
+                <td>
+                    tournament=yes<br>
+                    tournament=no
+                </td>
+                <td>N/A</td>
+                <td>
+                    Required; select Yes or No.
+                </td>
+                <td>
+                    Low sensitivity. Only participation
+                    preference is collected.
+                </td>
+            </tr>
+
+            <!-- Field 8: Tournament Game -->
+            <tr>
+                <td>Preferred tournament game</td>
+                <td>
+                    Helps identify interest in specific
+                    tournament games.
+                </td>
+                <td>No</td>
+                <td>select</td>
+                <td>
+                    tournament_game=smash<br>
+                    tournament_game=mario_kart<br>
+                    tournament_game=other
+                </td>
+                <td>N/A</td>
+                <td>
+                    Optional; select a game only if
+                    interested in tournament participation.
+                </td>
+                <td>
+                    Low sensitivity. No gaming account
+                    credentials are requested.
+                </td>
+            </tr>
+
+            <!-- Field 9: Accessibility -->
+            <tr>
+                <td>
+                    Accessibility accommodations
+                </td>
+                <td>
+                    Allows attendees to optionally
+                    communicate accommodations needed
+                    for participation.
+                </td>
+                <td>No</td>
+                <td>textarea</td>
+                <td>accessibility_needs</td>
+                <td>N/A</td>
+                <td>
+                    Optional; maximum 500 characters.
+                    Describe the accommodation requested,
+                    not a medical diagnosis.
+                </td>
+                <td>
+                    Potentially sensitive information.
+                    Optional and limited to practical
+                    accommodation requests.
+                </td>
+            </tr>
+
+            <!-- Field 10: Questions -->
+            <tr>
+                <td>Additional questions</td>
+                <td>
+                    Gives attendees an opportunity
+                    to ask event-related questions
+                    before attending.
+                </td>
+                <td>No</td>
+                <td>textarea</td>
+                <td>questions</td>
+                <td>N/A</td>
+                <td>
+                    Optional; maximum 300 characters.
+                    Event-related questions only.
+                </td>
+                <td>
+                    May contain voluntarily shared
+                    information. Instructions discourage
+                    sharing unnecessary personal details.
+                </td>
+            </tr>
+
+            <!-- Field 11: Event Rules -->
+            <tr>
+                <td>
+                    I have read and agree to follow
+                    the event participation rules.
+                </td>
+                <td>
+                    Confirms acknowledgment of the
+                    event's participation guidelines.
+                </td>
+                <td>Yes</td>
+                <td>input type="checkbox"</td>
+                <td>rules_accepted=yes</td>
+                <td>N/A</td>
+                <td>
+                    Required; checkbox must be selected.
+                    Rules must be available to read.
+                </td>
+                <td>
+                    Low sensitivity. Only acknowledgment
+                    is requested.
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <h2>Data Minimization Summary</h2>
+
+    <p>
+        PixelFest 2027 collects only the information necessary
+        to support event registration and participation.
+        The form does not request home addresses, phone numbers,
+        payment information, passwords, or birth dates.
+    </p>
+
+    <p>
+        Optional information is limited to gaming preferences,
+        accessibility accommodations, and event-related questions.
+        All test submissions will use fictional information.
+    </p>
+
+    <h2>Prototype Privacy Notice</h2>
+
+    <p>
+        This project is an academic front-end prototype.
+        It does not transmit, store, or process actual
+        registration data. No real personal information
+        should be entered into the form.
+    </p>
+
+</body>
+</html>
