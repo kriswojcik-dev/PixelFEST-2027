@@ -266,66 +266,165 @@
         </section>
 
         <!-- F5: State and Recovery Examples -->
-        <section id="states">
-            <h2>F5 · State and Recovery Specimen</h2>
+        
+<!-- F5: States and Recovery -->
+<section id="states">
+    <h2>F5 · States and Recovery</h2>
 
-            <p>
-                This section demonstrates example form states.
-                It is separate from the registration form.
-            </p>
+    <p>
+        The following examples demonstrate the form's
+        interaction and validation states. These are
+        fictional specimens and are not part of the
+        live registration form.
+    </p>
 
-            <div class="field">
-                <label for="default-example">
-                    Default state
-                </label>
-                <input
-                    id="default-example"
-                    type="text"
-                    placeholder="Example text field">
-            </div>
+    <!-- Default State -->
+    <div class="field">
+        <label for="state-default">
+            Default state
+        </label>
+        <input
+            type="text"
+            id="state-default"
+            placeholder="Enter your gamer tag">
+        <p class="help">
+            An untouched, optional text field.
+        </p>
+    </div>
 
-            <div class="field">
-                <label for="valid-example">
-                    Valid state
-                </label>
-                <input
-                    id="valid-example"
-                    type="email"
-                    value="player@example.com"
-                    readonly>
-            </div>
+    <!-- Focus State -->
+    <div class="field">
+        <label for="state-focus">
+            Focus state
+        </label>
+        <input
+            type="text"
+            id="state-focus"
+            placeholder="Select this field">
+        <p class="help">
+            Click this field or navigate to it using Tab.
+            A visible outline indicates keyboard focus.
+        </p>
+    </div>
 
-            <div class="error-summary">
-                <h3>Example: Registration needs attention</h3>
-                <p>
-                    <a href="#error-example">
-                        Email address needs attention
-                    </a>
-                </p>
-            </div>
+    <!-- Required State -->
+    <div class="field">
+        <label for="state-required">
+            Required field *
+        </label>
+        <input
+            type="text"
+            id="state-required"
+            required>
+        <p class="help">
+            Required fields must be completed before
+            a valid submission can occur.
+        </p>
+    </div>
 
-            <div class="field field-error">
-                <label for="error-example">
-                    Email address
-                </label>
-                <input
-                    id="error-example"
-                    type="email"
-                    value="player.example"
-                    aria-invalid="true"
-                    aria-describedby="error-message">
+    <!-- Valid State -->
+    <div class="field">
+        <label for="state-valid">
+            Valid email example
+        </label>
+        <input
+            type="email"
+            id="state-valid"
+            value="player@example.com"
+            readonly>
+        <p class="help">
+            This example contains a correctly
+            formatted fictional email address.
+        </p>
+    </div>
 
-                <p id="error-message">
-                    <strong>Error:</strong>
-                    Enter an email address in the format
-                    player@example.com.
-                </p>
-            </div>
+    <!-- Invalid State -->
+    <div class="field field-error">
+        <label for="state-invalid">
+            Invalid email example
+        </label>
+        <input
+            type="email"
+            id="state-invalid"
+            value="player.example"
+            aria-invalid="true"
+            aria-describedby="invalid-help">
 
-            <button type="button" disabled>
-                Disabled example
-            </button>
-        </section>
+        <p id="invalid-help">
+            <strong>Error:</strong>
+            Enter a valid email address, such as
+            player@example.com.
+        </p>
+    </div>
+
+    <!-- Disabled State -->
+    <div class="field">
+        <label for="state-disabled">
+            Disabled field example
+        </label>
+        <input
+            type="text"
+            id="state-disabled"
+            value="Registration unavailable"
+            disabled>
+        <p class="help">
+            Disabled controls cannot be edited
+            or selected during keyboard navigation.
+        </p>
+    </div>
+
+    <!-- Static Server-Returned Error -->
+    <h3>Static Server Error Example</h3>
+
+    <p>
+        Imagine that a fictional registration was
+        returned because the email address was
+        not accepted.
+    </p>
+
+    <div class="error-summary" role="alert">
+        <h3>Registration needs attention</h3>
+        <p>
+            We could not complete the fictional
+            registration. Please correct the
+            highlighted field below.
+        </p>
+        <p>
+            <a href="#server-email">
+                Go to email address error
+            </a>
+        </p>
+    </div>
+
+    <div class="field field-error">
+        <label for="server-email">
+            Email address *
+        </label>
+
+        <input
+            type="email"
+            id="server-email"
+            value="player@example.com"
+            aria-invalid="true"
+            aria-describedby="server-error-message">
+
+        <p id="server-error-message">
+            <strong>Error:</strong>
+            This fictional email address has
+            already been registered. Enter a
+            different fictional email address
+            and try again.
+        </p>
+    </div>
+
+    <p class="help">
+        The previously entered value remains
+        visible so the attendee can correct
+        the problem without starting over.
+        This example is static and no server
+        connection exists.
+    </p>
+</section>
 
         <!-- F6: Documentation -->
         <section id="documentation">
