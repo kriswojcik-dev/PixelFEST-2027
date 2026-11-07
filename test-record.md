@@ -20,7 +20,7 @@
 - Radio groups operable with arrow keys: Pass, I was able to navigate between radio button options using the arrow keys and select my preferred option.
 - Checkboxes operable with Space: Pass, I was able to check and uncheck boxes using the SPACE bar.
 - Can reach submit button: Pass, I was able to reach the "Register for PixelFest" button using TAB and activate it using ENTER.
-- Submission attempt result: Native HTML validation prevented submission when required fields were empty or an email address was incorrectly formatted. With valid information, the browser attempted to navigate to the configured destination. No real registration was created.
+- Submission attempt result: Native HTML validation prevented submission when required fields were empty or an email address was incorrectly formatted. With valid information, the browser attempted to navigate to the configured destination. No real registration was created. Using the method="get" shows information in the url once submitted.
 
 ## Accessible Names and Groups
 - Text field label: Full Name *: The text input has a visible label connected using for="full-name" and id="full-name".
